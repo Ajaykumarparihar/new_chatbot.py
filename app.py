@@ -1,8 +1,18 @@
 import streamlit as st
 import requests
+import os
+from dotenv import load_dotenv
 
-# ✅ Your Groq API key
-GROQ_API_KEY = "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"
+# ✅ Load environment variables
+load_dotenv()
+
+# ✅ Get Groq API key from environment
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+# ✅ Check if API key is loaded
+if not GROQ_API_KEY:
+    st.error("❌ GROQ_API_KEY not found! Please check your .env file.")
+    st.stop()
 
 # ✅ Streamlit UI settings
 st.set_page_config(page_title="Groq Chatbot", layout="centered")

@@ -30,12 +30,13 @@ A simple and elegant chatbot built using Streamlit and Groq's API, powered by th
    pip install -r requirements.txt
    ```
 
-3. **Set up your Groq API Key**
-   - Open `app.py`
-   - Replace the `GROQ_API_KEY` with your actual API key from [Groq Console](https://console.groq.com/)
-   ```python
-   GROQ_API_KEY = "your_actual_api_key_here"
+3. **Set up your environment variables**
+   - The project includes a `.env` file with your API key
+   - **For security**: Replace the API key in `.env` with your actual key from [Groq Console](https://console.groq.com/)
    ```
+   GROQ_API_KEY=your_actual_api_key_here
+   ```
+   - **Important**: Never commit your actual API key to version control!
 
 4. **Run the application**
    ```bash
@@ -55,6 +56,8 @@ yyy/
 ├── gemma_chatbot.py    # Gemma model chatbot variant
 ├── mixtral_chatbot.py  # Mixtral model chatbot variant
 ├── requirements.txt    # Python dependencies
+├── .env               # Environment variables (API keys)
+├── .gitignore         # Git ignore file
 └── README.md          # Project documentation
 ```
 
@@ -108,6 +111,7 @@ You can customize various aspects:
 The `requirements.txt` includes:
 - `streamlit` - Web app framework
 - `requests` - HTTP library for API calls
+- `python-dotenv` - Load environment variables from .env file
 
 ## 🤝 Contributing
 
